@@ -148,5 +148,22 @@ namespace SuperMarketnet
         {
 
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "select * from producttable where prodcat='"+comboBox2.SelectedValue.ToString();
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            gunaDataGridView1.DataSource = ds.Tables[0];
+            Con.Close();
+        }
     }
 }
