@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SuperMarketnet
 {
@@ -16,7 +17,8 @@ namespace SuperMarketnet
         {
             InitializeComponent();
         }
-
+        public static string sellerName = "";
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pc1\Documents\smarketdb.mdf;Integrated Security=True;Connect Timeout=30");
         private void label4_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -36,19 +38,49 @@ namespace SuperMarketnet
             }
             else
             {
-                if(roleCb.SelectedItem.ToString() == "Admin")
+                if(roleCb.SelectedIndex > -1)
                 {
-                    if(UNameTb.Text == "admin" || PassTb.Text == "admin")
+                    if(roleCb.SelectedItem.ToString() == "Admin")
                     {
-                        productForm prod = new productForm();
-                        this.Hide();
-                        prod.Show();
+                        if (UNameTb.Text == "admin" || PassTb.Text == "admin")
+                        {
+                            productForm prod = new productForm();
+                            this.Hide();
+                            prod.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong Username or Password. PLease try again!");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Wrong Username or Password. PLease try again!");
+                        Con.Open();
+                        SqlDataAdapter sda = new SqlDataAdapter("select count(8) from sellertable where sellername='" + UNameTb.Text + "' and sellerpassword ='" + PassTb.Text + "'", Con);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        if (dt.Rows[0][0].ToString() == "1")
+                        {
+                            sellerName = UNameTb.Text;
+                            selllingForm sForm = new selllingForm();
+                            this.Hide();
+                            sForm.Show();
+                            Con.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong username or password");
+                        }
+                        Con.Close();
                     }
+                    
                 }
+
+                else
+                {
+                    MessageBox.Show("Please select your role");
+                }
+
             }
         }
     }

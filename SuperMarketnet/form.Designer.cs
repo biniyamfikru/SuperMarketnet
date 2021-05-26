@@ -96,7 +96,7 @@ namespace SuperMarketnet
             this.PassTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PassTb.HintForeColor = System.Drawing.Color.Empty;
             this.PassTb.HintText = "";
-            this.PassTb.isPassword = false;
+            this.PassTb.isPassword = true;
             this.PassTb.LineFocusedColor = System.Drawing.Color.Blue;
             this.PassTb.LineIdleColor = System.Drawing.Color.Black;
             this.PassTb.LineMouseHoverColor = System.Drawing.Color.Blue;

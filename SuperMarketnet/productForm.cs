@@ -88,7 +88,6 @@ namespace SuperMarketnet
         private void button1_Click(object sender, EventArgs e)
         {
             sellerForm seller = new sellerForm();
-            Con.Close();
             this.Hide();
             seller.Show();
         }
@@ -164,6 +163,14 @@ namespace SuperMarketnet
             sda.Fill(ds);
             gunaDataGridView1.DataSource = ds.Tables[0];
             Con.Close();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+            form homePage = new form(); 
+            this.Hide();
+            homePage.Show();
         }
     }
 }

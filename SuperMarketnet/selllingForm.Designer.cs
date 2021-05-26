@@ -71,6 +71,7 @@ namespace SuperMarketnet
             this.label11 = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellDGV)).BeginInit();
@@ -251,7 +252,8 @@ namespace SuperMarketnet
             // 
             this.SellerName.AutoSize = true;
             this.SellerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SellerName.Location = new System.Drawing.Point(7, 14);
+            this.SellerName.ForeColor = System.Drawing.Color.White;
+            this.SellerName.Location = new System.Drawing.Point(20, 3);
             this.SellerName.Name = "SellerName";
             this.SellerName.Size = new System.Drawing.Size(49, 20);
             this.SellerName.TabIndex = 32;
@@ -413,6 +415,7 @@ namespace SuperMarketnet
             // 
             this.Datelbl.AutoSize = true;
             this.Datelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datelbl.ForeColor = System.Drawing.Color.White;
             this.Datelbl.Location = new System.Drawing.Point(579, 14);
             this.Datelbl.Name = "Datelbl";
             this.Datelbl.Size = new System.Drawing.Size(44, 20);
@@ -599,12 +602,25 @@ namespace SuperMarketnet
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(35, 400);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Logout";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // selllingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -656,5 +672,6 @@ namespace SuperMarketnet
         private System.Windows.Forms.DataGridViewTextBoxColumn PTotal;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label2;
     }
 }

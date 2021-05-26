@@ -69,6 +69,7 @@ namespace SuperMarketnet
             populate();
             populateBill();
             FillCombo();
+            SellerName.Text = form.sellerName;
         }
         int flag = 0;
         private void sellDGV_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -149,7 +150,14 @@ namespace SuperMarketnet
             var ds = new DataSet();
             sda.Fill(ds);
             sellDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            Con.Close();    
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            form login = new form();
+            this.Hide();
+            login.Show();  
         }
 
         private void btAddProd_Click(object sender, EventArgs e)

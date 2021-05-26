@@ -16,7 +16,7 @@ namespace SuperMarketnet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new selllingForm());
+            Application.Run(new form());
         }
     }
 }

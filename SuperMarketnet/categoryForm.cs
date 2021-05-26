@@ -116,5 +116,19 @@ namespace SuperMarketnet
             this.Hide();
             prod.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sellerForm seller = new sellerForm();
+            this.Hide();
+            seller.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            form homePage = new form();
+            this.Hide();
+            homePage.Show();
+        }
     }
 }

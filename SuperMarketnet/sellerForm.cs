@@ -123,5 +123,19 @@ namespace SuperMarketnet
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void catBt_Click(object sender, EventArgs e)
+        {
+            categoryForm catForm = new categoryForm();
+            this.Hide();
+            catForm.Show();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            form homePage = new form();
+            this.Hide();
+            homePage.Show();
+        }
     }
 }
